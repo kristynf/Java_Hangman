@@ -40,8 +40,8 @@ public class Main {
             System.out.println("Let's Start Playing Hangman!");
             int randomNumber = random.nextInt(guesses.length); //random.nextInt(10);
             char randomWordToGuess[] = guesses[randomNumber].toCharArray(); // java -> j,a,v,a
-            int ammountOfGuesses = randomWordToGuess.length; //total tries to guess a word.
-            char playerGuess[] = new char[ammountOfGuesses]; // "_ _ _ _ _ _ _ _"
+            int amountOfGuesses = 5; //total tries to guess a word.
+            char playerGuess[] = new char[randomWordToGuess.length]; // "_ _ _ _ _ _ _ _"
 
             for(int i=0; i<playerGuess.length; i++){ // Assign empty dashes at start "_ _ _ _ _ _ _ _"
                 playerGuess[i] =  '_';
@@ -50,21 +50,28 @@ public class Main {
             boolean wordIsGuessed = false;
             int tries = 0;
 
-            while(!wordIsGuessed && tries != ammountOfGuesses){
+            while(!wordIsGuessed && tries != amountOfGuesses){
                 System.out.println("Current Guesses: ");
                 print(playerGuess);
-                System.out.printf("You have %d amount of tries left.\n", ammountOfGuesses-tries);
-                System.out.println("Enter a single character: ");
-                char input = scanner.nextLine().charAt(0);
-                tries++;
+                System.out.printf("You have %d amount of tries left.\n", amountOfGuesses-tries);
+                System.out.println("Enter a word or letter: ");
+                //char input = scanner.nextLine().charAt(0);
+                String input = scanner.nextLine();
+                for (int i = 0; i < 0; i++);
+                {
+                    String[] words_letters = new String[guesses[randomNumber].length()];
 
-                if(input == '-'){
+                }
+                //char[] chars= input.toCharArray(); //{'h','e',//
+                    tries++;
+
+                if(input == "-"){
                     wordIsGuessed = true;
                     weArePlaying = false;
                 } else{
                     for(int i=0; i<randomWordToGuess.length; i++){
                         if(randomWordToGuess[i] == input){
-                            playerGuess[i] = input;
+                            playerGuess[i] = chars[0];
                         }
                     }
 
